@@ -26,6 +26,6 @@ export class ProductDetailsComponent implements OnInit {
       }, error => console.log(error));
   }
   list() {
-    this.router.navigate(['products']);
+    this.router.navigate(['/productList']);
   }
 }

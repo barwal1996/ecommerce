@@ -25,12 +25,12 @@ export class ProductListComponent implements OnInit {
   
   productDetails(productId:string)
   {
-  this.router.navigate(['details',productId])
+  this.router.navigate(['/details',productId])
   }
   
   editProduct(productId:string)
   {
-  this.router.navigate(['update',productId])
+  this.router.navigate(['/update',productId])
   
   }
   deleteProduct(productId:string) {

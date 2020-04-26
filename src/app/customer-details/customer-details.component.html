@@ -1,0 +1,26 @@
+<h2>Product Details</h2>
+
+<hr/>
+<div *ngIf="customer">
+<div>
+<label><b>Customer Id: </b></label> {{customer.phoneNo}}
+</div>
+<div>
+<label><b>Customer Name: </b></label> {{customer.firstName}}
+</div>
+<div>
+<label><b>Surname </b></label> {{customer.lastName}}
+</div>
+<div>
+    <label><b>EmailId :</b></label>{{customer.emailId}}
+</div>
+<div>
+<label><b>Password: </b></label> {{customer.password}}
+</div>
+
+
+</div>
+
+<br>
+<br>
+<button (click)=" custList()" class="btn btn-primary">Back to customer List</button><br>

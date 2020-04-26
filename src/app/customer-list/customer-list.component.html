@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Customer List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+
+          <th>phoneNo</th>
+          <th>firstName</th>
+          <th>lastName</th>
+          <th>emailId</th>
+          <th>password</th>
+   
+          <!-- <th>fileLocation</th> -->
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers | async">
+          <td>{{ customer.phoneNo }}</td>
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.emailId}}</td>
+          <td>{{ customer.password }}</td>
+         
+         
+          <td>
+            <button (click)="deleteCustomer(customer.phoneNo)" class="btn btn-danger">Delete</button> 
+           
+              <button (click)="customerDetails(customer.phoneNo)" class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

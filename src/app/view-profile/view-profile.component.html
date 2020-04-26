@@ -1,0 +1,24 @@
+<h2>User Profile Details</h2>
+
+<hr/>
+<div *ngIf="customer">
+<div>
+<label><b>Phone number: </b></label> {{customer.phoneNo}}
+</div>
+<div>
+<label><b>First Name: </b></label> {{customer.firstName}}
+</div>
+<div>
+<label><b>Last Name: </b></label> {{customer.lastName}}
+</div>
+<div>
+    <label><b>Email :</b></label>{{customer.emailId}}
+</div>
+<div>
+<label><b>Password : </b></label> {{customer.password}}
+</div>
+</div>
+
+<br>
+<br>
+<button (click)="onUpdate()" class="btn btn-primary">Update Details</button><br>

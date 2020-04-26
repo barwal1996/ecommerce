@@ -17,8 +17,13 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { IndexComponent } from './index/index.component';
 
 import { MainHeaderComponent } from './main-header/main-header.component';
-
-
+import { RegisterComponent } from './register/register.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import {CustomerDashboardComponent} from './customer-dashboard/customer-dashboard.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { OrderListComponent} from './order-list/order-list.component';
 
 const appRoutes: Routes = [
   {
@@ -26,19 +31,39 @@ const appRoutes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'productList',component:ProductListComponent},
+     
       {path:'productDetails',component:ProductDetailsComponent},
       {path: 'addProduct',component:CreateProductComponent},
-      {path:'updateProduct',component:UpdateProductComponent}
+      {path:'customerList',component:CustomerListComponent},
+      {path:'custdetails',component:CustomerDetailsComponent},
+  { path: 'productList',component:ProductListComponent},
+
+  
+      
     ]
   },
+  {path: 'viewProfile', component:ViewProfileComponent},
+  {path: 'orderList', component:OrderListComponent},
+  {path:'customerDashboard',component:CustomerDashboardComponent},
+  { path: 'customerList',component:CustomerListComponent},
+  {path:'custdetails/:phoneNo',component:CustomerDetailsComponent},
+  { path: 'productList',component:ProductListComponent},
+  {path:'details/:productId',component:ProductDetailsComponent},
+
+  {path:'update/:productId',component:UpdateProductComponent},
+  { path:"register",component:RegisterComponent},
+  { path: "customerLogin", component:CustomerLoginComponent},
   { path: 'login', component: LoginComponent , pathMatch: 'full'},
   { path: '', component: IndexComponent}
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, LoginComponent, HeaderComponent, AboutComponent, LogoutComponent, CreateProductComponent, ProductListComponent, UpdateProductComponent, ProductDetailsComponent, IndexComponent,MainHeaderComponent
+    AppComponent, HomeComponent, LoginComponent, HeaderComponent, AboutComponent, LogoutComponent,
+     CreateProductComponent, ProductListComponent, UpdateProductComponent, ProductDetailsComponent, 
+     IndexComponent,MainHeaderComponent, RegisterComponent, CustomerLoginComponent,
+      CustomerListComponent, CustomerDetailsComponent,CustomerDashboardComponent, ViewProfileComponent,
+      OrderListComponent,
   ],
   imports: [
     BrowserModule,  RouterModule.forRoot(appRoutes),
@@ -50,7 +75,4 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
- 
 

@@ -15,7 +15,7 @@ export class UpdateProductComponent implements OnInit {
   submitted=false;
   products:Observable<Product[]>;
 
-  category = ['TV', 'Mobile',  
+  category = ['Tv', 'Mobile',  
 'Laptop', 'Washing Machine']; 
 
   constructor(private route:ActivatedRoute,private router:Router,private productService:ProductService) {
@@ -55,5 +55,3 @@ export class UpdateProductComponent implements OnInit {
 
 
 }
-
-

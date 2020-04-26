@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-import { AuthenticationService} from '../authentication.service';
+import { AuthenticationService} from '../services/authentication.service';
+import { FormBuilder, FormGroup, Validator, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -10,32 +11,39 @@ import { AuthenticationService} from '../authentication.service';
 
 
 export class LoginComponent implements OnInit {
-
+  loginForm:FormGroup;
+    username = 'admin'
+    password = 'admin'
+    invalidLogin = false
+    errorMessage = 'Invalid Credentials';
+    successMessage: string;
+    loginSuccess = false;
   
-  username = ''
-  password = ''
-  invalidLogin = false
-  errorMessage = 'Invalid Credentials';
-  successMessage: string;
-  loginSuccess = false;
+  
+    constructor(private router:Router,private loginService:AuthenticationService,loginFB: FormBuilder) {
 
-
-  constructor(private router:Router,private loginService:AuthenticationService) { }
-
-  checkLogin(){
-    if(this.loginService.authenticate(this.username,this.password)){
-      this.router.navigate([''])
-      this.invalidLogin=false;
-      this.loginSuccess=true;
-      this.successMessage='Login Successful';
-        this.router.navigateByUrl('dashboard/home');
+     
+    this.loginForm = loginFB.group({
+  
+      name: ['', Validators.required],
+      password: ['', Validators.minLength(8)],
+      email: ['', Validators.email]
+    })
+  }
+  
+    checkLogin(){
+      if(this.loginService.authenticate(this.username,this.password)){
+        this.router.navigate([''])
+        this.invalidLogin=false;
+        this.loginSuccess=true;
+        this.successMessage='Login Successful';
+      }
+      else
+      this.invalidLogin=true;
+      this.loginSuccess=false;
     }
-    else
-    this.invalidLogin=true;
-    this.loginSuccess=false;
+  
+    ngOnInit(): void {
+    }
+  
   }
-
-  ngOnInit(): void {
-  }
-
-}

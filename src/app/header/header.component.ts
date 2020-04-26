@@ -27,8 +27,14 @@ export class HeaderComponent{
     onUpdate(){
         this.router.navigateByUrl('dashboard/updateProduct');
     }
+    update(){
+        this.router.navigateByUrl('customerDashboard/viewProfile');
+    }
     onSubmit(){
         this.router.navigateByUrl('dashboard/addProduct');
+    }
+    custList(){
+        this.router.navigateByUrl('dashboard/customerList');
     }
     
     logMeOut(){

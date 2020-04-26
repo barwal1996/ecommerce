@@ -13,7 +13,7 @@
           <th>Product Category</th>
           <th>Description</th>
           <th>Price</th>
-          <th>fileLocation</th>
+          <!-- <th>fileLocation</th> -->
           <th>Actions</th>
         </tr>
       </thead>
@@ -25,10 +25,10 @@
           <td>{{ product.productCategory}}</td>
           <td>{{ product.productDescription }}</td>
           <td>{{ product.productPrice }}</td>
-          <td>{{ product.fileLocation }}</td>
+          <!-- <td><img src="C:\Users\moksh\Desktop\sonytv.jpg" alt="" srcset=""> </td> -->
           <td>
             <button (click)="deleteProduct(product.productId)" class="btn btn-danger">Delete</button> 
-            <button (click)="updateProduct(product.productId)" class="btn btn-secondary" style="margin-left: 10px">Update</button> 
+            <button (click)="editProduct(product.productId)" class="btn btn-secondary" style="margin-left: 10px">Update</button> 
               <button (click)="productDetails(product.productId)" class="btn btn-info" style="margin-left: 10px">Details</button>
           </td>
         </tr>
