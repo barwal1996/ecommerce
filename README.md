@@ -1,3 +1,8 @@
+Spring MVC
+https://github.com/barwal1996/WishDotCom
+Consumed API services and view in JSP AND ANGULAR BOTH
+
+
 # Angular 6 with Admin LTE and Routing Configured
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
